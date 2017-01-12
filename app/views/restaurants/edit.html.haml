@@ -1,10 +1,10 @@
 .page-header
-  = link_to restaurants_path, class: 'btn btn-default' do
-    %span.glyphicon.glyphicon-list-alt
-    Back
   = link_to @restaurant, class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-info-sign
-    Show
+    Back
+  = link_to @restaurant, class: 'btn btn-danger', data: { confirm: 'Are you sure?' }, method: :delete do
+    %span.glyphicon.glyphicon-remove
+    Delete
   %h1 Editing restaurant
 
 = render 'form'

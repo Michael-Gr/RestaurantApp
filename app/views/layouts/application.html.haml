@@ -26,11 +26,11 @@
             %span.icon-bar
             %span.icon-bar
           = link_to root_path, class: "navbar-brand" do
-            RestaurantApp
+            Eat St. Pete
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
-              = link_to "Home", root_path
+              = link_to "Restaurants", root_path
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
