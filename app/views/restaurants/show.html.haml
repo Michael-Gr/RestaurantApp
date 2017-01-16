@@ -1,26 +1,32 @@
-.page-header
-  = link_to edit_restaurant_path(@restaurant), class: 'btn btn-primary' do
-    %span.glyphicon.glyphicon-pencil
-    Edit
-  %h1
-    = @restaurant.name
+-# .page-header
+-#   = link_to edit_restaurant_path(@restaurant), class: 'btn btn-primary' do
+-#     %span.glyphicon.glyphicon-pencil
+-#     Edit
+-#   %h1
+-#     = @restaurant.name
 
-.col-md-6
+%img#bg{:alt => "https://upload.wikimedia.org/wikipedia/commons/6/66/Saint_Petersburg_Florida_at_Night_from_McNulty_Lofts.png", :src => "https://upload.wikimedia.org/wikipedia/commons/6/66/Saint_Petersburg_Florida_at_Night_from_McNulty_Lofts.png"}/
+
+.col-md-4.restaurant-listing
   = image_tag attachment_url(@restaurant.photos.first, :image), size: "484x400"
 
-.col-md-6
-  %dl.dl-horizontal
-    %dt Address:
-    %dd= @restaurant.address
-    %dt Phone:
-    %dd= @restaurant.phone
-    %dt Website:
-    %dd= @restaurant.website
-    %dt Hours:
-    %dd= @restaurant.hours
-    %dt Price:
-    %dd= @restaurant.price
-    %dt Cuisine:
-    %dd= @restaurant.cuisine
-    %dt Menu:
-    %dd= @restaurant.menu_id
+.col-md-4
+
+.col-md-4.restaurant-listing
+  %h1
+    = @restaurant.name
+  %p
+    Phone:
+    = @restaurant.phone
+    •
+    Price:
+    = @restaurant.price
+  %p
+    Website:
+    = @restaurant.website
+  %p
+    Hours:
+    = @restaurant.hours
+  %p
+    Cuisine:
+    = @restaurant.cuisine

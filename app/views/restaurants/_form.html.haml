@@ -10,38 +10,30 @@
         - @restaurant.errors.full_messages.each do |msg|
           %li= msg
 
-  .form-group
-    = f.label :name, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.text_field :name, class: 'form-control'
-  .form-group
-    = f.label :address, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.text_field :address, class: 'form-control'
-  .form-group
-    = f.label :phone, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.text_field :phone, class: 'form-control'
-  .form-group
-    = f.label :website, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.text_field :website, class: 'form-control'
-  .form-group
-    = f.label :hours, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.text_area :hours, class: 'form-control'
-  .form-group
-    = f.label :price, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.select :price, options_for_select( Restaurant::PRICES, @restaurant.cuisine), class: 'form-control'
-  .form-group
-    = f.label :cuisine, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-10
+    %p
       = f.select :cuisine, options_for_select( Restaurant::CUISINES, @restaurant.cuisine), class: 'form-control'
-  .form-group
-    = f.label :menu, class: 'col-sm-2 control-label'
-    .col-sm-10
+  .col-sm-4
+    %p
       = f.attachment_field :menu, class: 'form-control'
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit class: 'btn btn-primary'
+    %p
+      .form-group
+      = f.submit class: 'btn btn-success'

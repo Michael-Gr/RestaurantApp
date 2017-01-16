@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  CUISINES = [ "Cuisine", "American", "Mexican", "Italian", "French", "Greek", "Chinese", "Japanese", "Korean" ]
+  CUISINES = [ "Cuisine", "American", "Mexican", "Italian", "French", "Greek", "Chinese", "Japanese", "Vietnamese", "Korean" ]
   PRICES = [
     ["Price", 0],
     ["$", 1],

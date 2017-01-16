@@ -19,19 +19,29 @@
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
       .container
-        .navbar-header
+        .navbar-header.logo
           %button.navbar-toggle.collapsed{type: "button", data: {toggle: "collapse", target: "#navbar"}, aria: {expanded: "false", controls: "navbar"} }
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
           = link_to root_path, class: "navbar-brand" do
-            Eat St. Pete
+            𝓔𝓪𝓽 𝓢𝓽. 𝓟𝓮𝓽𝓮
         #navbar.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li.active
-              = link_to "Restaurants", root_path
-    .container
+          %ul.nav.navbar-nav.navbar-right
+            - if logged_in?
+              %li
+                = link_to current_user.name, '#'
+              %li
+                = link_to 'Not you? Logout', logout_path
+              %li
+                = link_to new_restaurant_path do
+                  Add Restaurant
+            - else
+              %li
+                = link_to 'Login with Github', auth_path(provider: 'github')
+
+    .container.background
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
           %button.close{type: "button", data: {dismiss: "alert"} }

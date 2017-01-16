@@ -1,7 +1,15 @@
 class RestaurantsController < ApplicationController
+  before_action :authenticate!, except: [:index, :show]
+
   # GET /restaurants
   def index
-    @restaurants = Restaurant.all
+    if params[:cuisine]
+      @restaurants = Restaurant.where(cuisine: params[:cuisine])
+    elsif params[:price]
+      @restaurants = Restaurant.where(price: params[:price])
+    else
+      @restaurants = Restaurant.all
+    end
   end
 
   # GET /restaurants/1
