@@ -7,20 +7,18 @@
 
 %img#bg{:alt => "https://upload.wikimedia.org/wikipedia/commons/6/66/Saint_Petersburg_Florida_at_Night_from_McNulty_Lofts.png", :src => "https://upload.wikimedia.org/wikipedia/commons/6/66/Saint_Petersburg_Florida_at_Night_from_McNulty_Lofts.png"}/
 
-.col-md-4.restaurant-listing
-  = image_tag attachment_url(@restaurant.photos.first, :image), size: "484x400"
+.col-md-6.restaurant-listing
+  = image_tag attachment_url(@restaurant.photos.first, :image), class: 'img-responsive'
 
-.col-md-4
-
-.col-md-4.restaurant-listing
+.col-md-6.restaurant-listing
   %h1
     = @restaurant.name
   %p
     Phone:
     = @restaurant.phone
-    •
+  %p
     Price:
-    = @restaurant.price
+    = price_as_dollarsigns(@restaurant.price)
   %p
     Website:
     = @restaurant.website
@@ -30,3 +28,7 @@
   %p
     Cuisine:
     = @restaurant.cuisine
+  %p
+    = link_to edit_restaurant_path(@restaurant), class: 'btn btn-default btn-edit' do
+      %span.glyphicon.glyphicon-pencil
+      Edit

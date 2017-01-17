@@ -9,5 +9,6 @@ class Restaurant < ApplicationRecord
     ["$$$$$", 5]
   ]
   attachment :menu
+
   has_many :photos
 end

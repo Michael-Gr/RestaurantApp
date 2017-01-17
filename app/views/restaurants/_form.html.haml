@@ -12,19 +12,19 @@
 
   .col-sm-10
     %p
-      = f.text_field :name, class: 'form-control'
+      = f.text_field :name, class: 'form-control', placeholder: 'Name'
   .col-sm-10
     %p
-      = f.text_field :address, class: 'form-control'
+      = f.text_field :address, class: 'form-control', placeholder: 'Address'
   .col-sm-10
     %p
-      = f.text_field :phone, class: 'form-control'
+      = f.text_field :phone, class: 'form-control', placeholder: 'Phone'
   .col-sm-10
     %p
-      = f.text_field :website, class: 'form-control'
+      = f.text_field :website, class: 'form-control', placeholder: 'Website'
   .col-sm-10
     %p
-      = f.text_area :hours, class: 'form-control'
+      = f.text_area :hours, class: 'form-control', placeholder: 'Hours'
   .col-sm-10
     %p
       = f.select :price, options_for_select( Restaurant::PRICES, @restaurant.cuisine), class: 'form-control'

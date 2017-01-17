@@ -33,7 +33,7 @@
               %h5
                 %font{:size => "6"}= restaurant.name
               %p
-                = restaurant.phone
+                = price_as_dollarsigns(restaurant.price)
                 •
                 = restaurant.phone
               %p
